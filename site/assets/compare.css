@@ -1,0 +1,881 @@
+/* Riotous Audio — Product Compare styles
+ * ==========================================================================
+ * Sibling of assets/cart.css. Matches the "Gilded Quiet" palette from
+ * assets/site.css (gold/ivory on near-black).
+ *
+ * Palette anchors (kept in sync with site.css :root):
+ *   gold        #c9a86a   gold-bright #e3c489   gold-deep #9c804a
+ *   ink (ivory) #e9e6df   ink-soft    #b6b1a6   ink-faint #6f6a60
+ *   void        #0a0a0c   void-2      #101014   void-3    #16161c
+ *   line rgba(201,168,106,.18)   line-soft rgba(233,230,223,.08)
+ *   serif Cormorant Garamond / sans Archivo
+ *
+ * Accessibility: the site owner is older — large tap targets (min ~44-48px),
+ * large readable type, high-contrast 3px gold focus rings throughout.
+ * As in cart.css we alias the site tokens with literal-hex fallbacks so the
+ * compare UI still renders correctly if loaded without site.css custom props.
+ *
+ * ---- STACKING / Z-INDEX (read alongside cart.css) ------------------------
+ * cart.css owns the TOP of the stack:
+ *     .ra-cart-overlay  z-index: 1000
+ *     .ra-cart-drawer   z-index: 1001
+ * site.css header:
+ *     header.nav        z-index: 50
+ *
+ * Compare must sit ABOVE normal page content but BELOW the cart, so adding
+ * an item to the cart from inside the compare modal still slides the cart
+ * drawer over the top. We therefore pick values strictly under 1000:
+ *     #ra-cmp-bar       z-index: 900   (sticky bottom bar, above content)
+ *     .ra-cmp-overlay   z-index: 980   (dim, just under cart overlay 1000)
+ *     .ra-cmp-modal     z-index: 981   (panel, just under cart drawer 1001)
+ *     .ra-cmp-toggle (overlay-on-card) z-index: 3 (above .card-img art only)
+ * Gap of 20 below the cart overlay leaves headroom for any future layer.
+ * ==========================================================================
+ */
+
+:root {
+  --ra-gold: var(--gold, #c9a86a);
+  --ra-gold-bright: var(--gold-bright, #e3c489);
+  --ra-gold-deep: var(--gold-deep, #9c804a);
+  --ra-ink: var(--ink, #e9e6df);
+  --ra-ink-soft: var(--ink-soft, #b6b1a6);
+  --ra-ink-faint: var(--ink-faint, #6f6a60);
+  --ra-void: var(--void, #0a0a0c);
+  --ra-void-2: var(--void-2, #101014);
+  --ra-void-3: var(--void-3, #16161c);
+  --ra-line: var(--line, rgba(201, 168, 106, .18));
+  --ra-line-soft: var(--line-soft, rgba(233, 230, 223, .08));
+  --ra-serif: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  --ra-sans: var(--sans, 'Archivo', -apple-system, system-ui, sans-serif);
+  /* gold tint used to highlight differing rows (subtle, ~6-10% gold) */
+  --ra-cmp-tint: rgba(201, 168, 106, .09);
+  --ra-cmp-tint-strong: rgba(201, 168, 106, .14);
+}
+
+/* ==========================================================================
+ * 1) COMPARE TOGGLE  —  button.ra-cmp-toggle
+ *    Two placements:
+ *      (a) absolutely-positioned overlay control, top-right of .card-img
+ *      (b) inline near a product page's .ra-addcart-wrap
+ *    Small gold-outline pill; filled-gold when active.
+ * ========================================================================== */
+.ra-cmp-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  font-family: var(--ra-sans);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: .55rem .95rem;
+  border-radius: 999px;
+  border: 1px solid var(--ra-gold);
+  background: rgba(10, 10, 12, .55);
+  color: var(--ra-gold);
+  cursor: pointer;
+  transition: background .25s, color .25s, border-color .25s, transform .15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.ra-cmp-toggle:hover {
+  background: var(--ra-gold);
+  color: var(--ra-void);
+  border-color: var(--ra-gold);
+}
+.ra-cmp-toggle:active { transform: translateY(1px); }
+.ra-cmp-toggle:focus-visible {
+  outline: 3px solid var(--ra-gold-bright);
+  outline-offset: 2px;
+}
+/* icon (svg / glyph) sizing inside the pill */
+.ra-cmp-toggle svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+/* active / selected state — filled gold */
+.ra-cmp-toggle.is-active,
+.ra-cmp-toggle[aria-pressed="true"] {
+  background: var(--ra-gold);
+  color: var(--ra-void);
+  border-color: var(--ra-gold);
+}
+.ra-cmp-toggle.is-active:hover,
+.ra-cmp-toggle[aria-pressed="true"]:hover {
+  background: var(--ra-gold-bright);
+  border-color: var(--ra-gold-bright);
+}
+
+/* (a) overlay placement: top-right of a listing card's image.
+ * .card and .card-img are position:relative in site.css, so we anchor here.
+ * The card itself is an <a> link; this button is absolutely positioned and
+ * only covers its own pill footprint, leaving the rest of the card link
+ * clickable. compare.js stops click propagation; we add z-index so the pill
+ * paints above the card art. Hidden by default until hover/focus or active,
+ * so it never clutters the gallery — but stays visible once selected. */
+.card-img .ra-cmp-toggle {
+  position: absolute;
+  top: .7rem;
+  right: .7rem;
+  z-index: 3;
+  padding: .42rem .7rem;
+  font-size: .66rem;
+  letter-spacing: .12em;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .25s, transform .25s, background .25s, color .25s, border-color .25s;
+}
+/* reveal on card hover/focus-within, on toggle focus, or when active */
+.card:hover .card-img .ra-cmp-toggle,
+.card:focus-within .card-img .ra-cmp-toggle,
+.card-img .ra-cmp-toggle:focus-visible,
+.card-img .ra-cmp-toggle.is-active,
+.card-img .ra-cmp-toggle[aria-pressed="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* (b) inline placement near the product page add-to-cart wrap.
+ * Sit it on its own row beneath the buttons; a touch larger for legibility. */
+.ra-addcart-wrap + .ra-cmp-toggle,
+.ra-cmp-toggle.ra-cmp-toggle-inline {
+  margin-top: .4rem;
+  min-height: 44px;
+  padding: .7rem 1.2rem;
+  font-size: .8rem;
+}
+
+/* ==========================================================================
+ * 2) COMPARE BAR  —  #ra-cmp-bar / .ra-cmp-bar
+ *    Sticky to the BOTTOM, centered pill, gold/ivory. Honors [hidden].
+ *    Above page content, below the cart (z-index 900 < cart 1000/1001).
+ * ========================================================================== */
+#ra-cmp-bar,
+.ra-cmp-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;             /* under .ra-cart-overlay(1000)/.ra-cart-drawer(1001) */
+  display: flex;
+  justify-content: center;
+  /* keep clear of the header cart button (top) and respect safe areas */
+  padding: 1rem clamp(14px, 4vw, 28px) calc(1rem + env(safe-area-inset-bottom, 0px));
+  pointer-events: none;     /* let the gutter pass clicks through; inner re-enables */
+}
+/* honor the [hidden] attribute explicitly (some resets weaken it) */
+#ra-cmp-bar[hidden],
+.ra-cmp-bar[hidden] { display: none; }
+
+/* the inner pill — the visible bar */
+.ra-cmp-bar-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: var(--maxw, 1280px);
+  padding: .8rem .9rem .8rem 1.3rem;
+  background: rgba(16, 16, 20, .94);
+  border: 1px solid var(--ra-line);
+  border-radius: 999px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .6), 0 0 0 1px rgba(0, 0, 0, .3);
+  backdrop-filter: blur(12px);
+  color: var(--ra-ink);
+  font-family: var(--ra-sans);
+}
+/* if compare.js puts chips/controls directly in #ra-cmp-bar (no inner
+ * wrapper), give the bar itself the pill treatment as a graceful fallback. */
+.ra-cmp-bar > .ra-cmp-chip,
+.ra-cmp-bar > .ra-cmp-count {
+  pointer-events: auto;
+}
+
+.ra-cmp-count {
+  font-family: var(--ra-serif);
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  color: var(--ra-gold);
+  white-space: nowrap;
+  flex: 0 0 auto;
+  padding-right: .2rem;
+}
+
+/* selected-product chips inside the bar */
+.ra-cmp-chips {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.ra-cmp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  flex: 0 0 auto;
+  padding: .35rem .55rem .35rem .4rem;
+  background: var(--ra-void-3);
+  border: 1px solid var(--ra-line-soft);
+  border-radius: 999px;
+  font-size: .82rem;
+  color: var(--ra-ink);
+  max-width: 220px;
+}
+.ra-cmp-chip-img {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  background: var(--ra-void-2);
+  border-radius: 50%;
+  padding: 3px;
+}
+.ra-cmp-chip-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.ra-cmp-chip-x {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: var(--ra-ink-faint);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.ra-cmp-chip-x:hover { color: var(--ra-void); background: var(--ra-gold); }
+.ra-cmp-chip-x:focus-visible {
+  outline: 2px solid var(--ra-gold-bright);
+  outline-offset: 1px;
+}
+
+/* bar action buttons */
+.ra-cmp-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+/* clear — ghost button */
+.ra-cmp-clear {
+  font-family: var(--ra-sans);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .7rem 1.1rem;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--ra-line);
+  background: transparent;
+  color: var(--ra-ink-soft);
+  cursor: pointer;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.ra-cmp-clear:hover {
+  color: var(--ra-gold);
+  border-color: var(--ra-line);
+  background: var(--ra-void-3);
+}
+.ra-cmp-clear:focus-visible {
+  outline: 3px solid var(--ra-gold-bright);
+  outline-offset: 2px;
+}
+
+/* go / compare — filled gold button */
+.ra-cmp-go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-family: var(--ra-sans);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: .8rem 1.5rem;
+  min-height: 48px;
+  border-radius: 999px;
+  border: 1px solid var(--ra-gold);
+  background: var(--ra-gold);
+  color: var(--ra-void);
+  cursor: pointer;
+  transition: background .25s, border-color .25s, transform .15s;
+  white-space: nowrap;
+}
+.ra-cmp-go:hover:not([disabled]):not([aria-disabled="true"]) {
+  background: var(--ra-gold-bright);
+  border-color: var(--ra-gold-bright);
+}
+.ra-cmp-go:active:not([disabled]) { transform: translateY(1px); }
+.ra-cmp-go:focus-visible {
+  outline: 3px solid var(--ra-gold-bright);
+  outline-offset: 3px;
+}
+.ra-cmp-go[disabled],
+.ra-cmp-go[aria-disabled="true"] {
+  background: transparent;
+  color: var(--ra-ink-faint);
+  border-color: var(--ra-line-soft);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+ * 3) COMPARE MODAL  —  .ra-cmp-overlay + .ra-cmp-modal (role=dialog)
+ *    Full-screen dim overlay + centered, large, scrollable panel.
+ *    Mirrors the cart drawer's overlay feel. Below the cart in the stack.
+ * ========================================================================== */
+html.ra-cmp-locked { overflow: hidden; }
+
+.ra-cmp-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 980;             /* just under .ra-cart-overlay (1000) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 40px);
+  background: rgba(5, 5, 7, .72);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+}
+.ra-cmp-overlay.ra-open,
+.ra-cmp-overlay.is-open { opacity: 1; visibility: visible; }
+.ra-cmp-overlay[hidden] { display: none; }
+
+.ra-cmp-modal {
+  position: relative;
+  z-index: 981;             /* just under .ra-cart-drawer (1001) */
+  display: flex;
+  flex-direction: column;
+  width: min(1180px, 100%);
+  max-height: min(90vh, 1000px);
+  background: var(--ra-void-2);
+  border: 1px solid var(--ra-line);
+  border-radius: 6px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, .7);
+  color: var(--ra-ink);
+  font-family: var(--ra-sans);
+  overflow: hidden;          /* inner regions scroll, not the frame */
+  transform: translateY(14px) scale(.985);
+  opacity: 0;
+  transition: transform .34s cubic-bezier(.4, 0, .2, 1), opacity .3s;
+}
+.ra-cmp-overlay.ra-open .ra-cmp-modal,
+.ra-cmp-overlay.is-open .ra-cmp-modal {
+  transform: none;
+  opacity: 1;
+}
+.ra-cmp-modal:focus { outline: none; }
+
+.ra-cmp-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex: 0 0 auto;
+  padding: 1.4rem 1.6rem 1.2rem;
+  border-bottom: 1px solid var(--ra-line);
+}
+.ra-cmp-modal-title {
+  font-family: var(--ra-serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: .01em;
+  color: var(--ra-ink);
+  margin: 0;
+}
+
+/* close button */
+.ra-cmp-x {
+  flex: 0 0 auto;
+  font-size: 2rem;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--ra-line-soft);
+  border-radius: 2px;
+  color: var(--ra-ink-soft);
+  cursor: pointer;
+  transition: color .25s, border-color .25s, background .25s;
+}
+.ra-cmp-x:hover { color: var(--ra-gold); border-color: var(--ra-line); }
+.ra-cmp-x:focus-visible {
+  outline: 3px solid var(--ra-gold-bright);
+  outline-offset: 2px;
+}
+
+/* body that scrolls (holds the controls + table) */
+.ra-cmp-modal-body {
+  flex: 1 1 auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+ * 4) CONTROLS  —  .ra-cmp-difftoggle (labeled) + .ra-cmp-share (subtle link)
+ *    These appear in the modal head/toolbar and on the shareable page.
+ * ========================================================================== */
+.ra-cmp-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.6rem;
+  border-bottom: 1px solid var(--ra-line-soft);
+  background: var(--ra-void-2);
+}
+
+/* "show differences only" — a labeled control wrapping a checkbox */
+.ra-cmp-difftoggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: var(--ra-sans);
+  font-size: .95rem;
+  color: var(--ra-ink-soft);
+  cursor: pointer;
+  user-select: none;
+  min-height: 44px;
+  padding: .25rem .2rem;
+}
+.ra-cmp-difftoggle input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  accent-color: var(--ra-gold);
+  cursor: pointer;
+}
+.ra-cmp-difftoggle:hover { color: var(--ra-ink); }
+.ra-cmp-difftoggle:focus-within {
+  outline: 3px solid var(--ra-gold-bright);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* the checkbox label text can be tagged for emphasis */
+.ra-cmp-difftoggle .ra-cmp-difftoggle-label { letter-spacing: .02em; }
+
+/* share — subtle ghost link/button */
+.ra-cmp-share {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--ra-sans);
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .55rem .9rem;
+  min-height: 40px;
+  border-radius: 3px;
+  border: 1px solid var(--ra-line-soft);
+  background: transparent;
+  color: var(--ra-ink-soft);
+  cursor: pointer;
+  transition: color .25s, border-color .25s, background .25s;
+}
+.ra-cmp-share:hover {
+  color: var(--ra-gold);
+  border-color: var(--ra-line);
+  background: var(--ra-void-3);
+}
+.ra-cmp-share:focus-visible {
+  outline: 3px solid var(--ra-gold-bright);
+  outline-offset: 2px;
+}
+.ra-cmp-share svg { width: 16px; height: 16px; flex: 0 0 auto; display: block; }
+/* transient confirmation state after copying the share link */
+.ra-cmp-share.is-copied { color: var(--ra-gold); border-color: var(--ra-gold); }
+
+/* ==========================================================================
+ * 5) COMPARE TABLE  —  table.ra-cmp-table
+ *    Side-by-side spec grid. Sticky product-header row (.ra-cmp-prodhead),
+ *    group-header rows (.ra-cmp-section), hairline separators, and
+ *    visibly-highlighted difference rows (.ra-cmp-diff).
+ * ========================================================================== */
+.ra-cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--ra-sans);
+  font-size: 1rem;            /* large, legible base for older eyes */
+  color: var(--ra-ink);
+  table-layout: fixed;
+}
+.ra-cmp-table th,
+.ra-cmp-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--ra-line-soft);  /* hairline row separators */
+  line-height: 1.45;
+}
+/* first column = spec labels */
+.ra-cmp-table th[scope="row"],
+.ra-cmp-table td.ra-cmp-label,
+.ra-cmp-table .ra-cmp-rowlabel {
+  width: 22%;
+  min-width: 150px;
+  color: var(--ra-ink-faint);
+  font-weight: 500;
+  letter-spacing: .02em;
+  background: var(--ra-void-2);
+}
+/* value cells */
+.ra-cmp-table td.ra-cmp-val,
+.ra-cmp-table td:not(.ra-cmp-label) {
+  color: var(--ra-ink);
+}
+/* zebra-free; rely on hairlines. Empty/dash values muted. */
+.ra-cmp-table td .ra-cmp-empty,
+.ra-cmp-table td.is-empty { color: var(--ra-ink-faint); }
+
+/* --- sticky product-header row (image + name + price + add button) --- */
+.ra-cmp-table thead th,
+.ra-cmp-prodhead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--ra-void-3);
+  border-bottom: 1px solid var(--ra-line);
+  vertical-align: bottom;
+}
+.ra-cmp-prodhead {
+  text-align: center;
+  padding: 1.2rem 1rem 1.3rem;
+}
+/* top-left corner cell of the header row (above the label column) */
+.ra-cmp-prodhead.ra-cmp-corner,
+.ra-cmp-table thead th:first-child {
+  text-align: left;
+  background: var(--ra-void-2);
+}
+.ra-cmp-prodhead-img {
+  width: auto;
+  height: 88px;
+  margin: 0 auto .7rem;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, .55));
+}
+.ra-cmp-prodhead-name {
+  font-family: var(--ra-serif);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  color: var(--ra-ink);
+  margin: 0 0 .35rem;
+}
+.ra-cmp-prodhead-name a:hover { color: var(--ra-gold); }
+.ra-cmp-prodhead-price {
+  font-family: var(--ra-serif);
+  font-size: 1.25rem;
+  color: var(--ra-gold);
+  margin-bottom: .8rem;
+}
+.ra-cmp-prodhead-price .msrp {
+  font-family: var(--ra-sans);
+  font-size: .8rem;
+  color: var(--ra-ink-faint);
+  text-decoration: line-through;
+  margin-left: .4rem;
+}
+/* remove-from-comparison control inside a product header */
+.ra-cmp-prodhead .ra-cmp-chip-x {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+}
+.ra-cmp-prodhead-cellwrap { position: relative; }
+
+/* the add-to-cart button reuses .ra-addcart from cart.css; we just size it
+ * down a touch so 4 columns fit comfortably on desktop. */
+.ra-cmp-prodhead .ra-addcart {
+  width: 100%;
+  font-size: .82rem;
+  letter-spacing: .12em;
+  padding: .75rem 1rem;
+  min-height: 48px;
+}
+
+/* --- group-header / section rows: gold uppercase eyebrow --- */
+.ra-cmp-section th,
+.ra-cmp-section td,
+td.ra-cmp-section,
+th.ra-cmp-section {
+  font-family: var(--ra-sans);
+  font-weight: 500;
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--ra-gold);
+  background: var(--ra-void);
+  padding-top: 1.5rem;
+  padding-bottom: .7rem;
+  border-bottom: 1px solid var(--ra-line);
+}
+/* a section row typically spans all columns */
+.ra-cmp-section td[colspan],
+.ra-cmp-section th[colspan] { width: auto; }
+
+/* --- difference rows: subtle gold tint + left accent bar --- */
+.ra-cmp-diff td,
+.ra-cmp-diff th {
+  background: var(--ra-cmp-tint);
+}
+/* left accent bar on the first cell of a diff row */
+.ra-cmp-diff > :first-child {
+  position: relative;
+  box-shadow: inset 3px 0 0 0 var(--ra-gold);
+}
+.ra-cmp-diff:hover td,
+.ra-cmp-diff:hover th { background: var(--ra-cmp-tint-strong); }
+/* let the diff tint win over the sticky label-column background */
+.ra-cmp-diff th[scope="row"],
+.ra-cmp-diff td.ra-cmp-label,
+.ra-cmp-diff .ra-cmp-rowlabel {
+  background: var(--ra-cmp-tint);
+  color: var(--ra-ink);
+}
+
+/* when "show differences only" is engaged, identical rows collapse.
+ * compare.js may either set [hidden] on identical rows or toggle a class on
+ * the table; support both so styling never depends on which it chose. */
+.ra-cmp-table tr[hidden] { display: none; }
+.ra-cmp-table.ra-cmp-diffonly tr:not(.ra-cmp-diff):not(.ra-cmp-section):not(.ra-cmp-prodhead-row):not(:first-child) {
+  display: none;
+}
+
+/* empty-state inside the modal/page (fewer than 2 products) */
+.ra-cmp-empty-state {
+  padding: 3rem 1.6rem;
+  text-align: center;
+  color: var(--ra-ink-soft);
+  font-size: 1.05rem;
+}
+.ra-cmp-empty-state .ra-cmp-empty-title {
+  font-family: var(--ra-serif);
+  font-size: 1.6rem;
+  color: var(--ra-gold-deep);
+  margin-bottom: .6rem;
+}
+
+/* ==========================================================================
+ * 6) SHAREABLE PAGE  —  #ra-cmp-page
+ *    Full-page wrapper for /compare. Padded, max-width, matches the site's
+ *    <section>/.wrap rhythm (header is 74px fixed; clear it).
+ * ========================================================================== */
+#ra-cmp-page {
+  max-width: var(--maxw, 1280px);
+  margin: 0 auto;
+  padding: clamp(96px, 12vw, 150px) clamp(20px, 5vw, 64px) clamp(64px, 10vw, 120px);
+  position: relative;
+  z-index: 2;
+}
+#ra-cmp-page .ra-cmp-page-head {
+  margin-bottom: clamp(28px, 5vw, 56px);
+}
+#ra-cmp-page .ra-cmp-page-head .eyebrow,
+#ra-cmp-page .ra-cmp-page-eyebrow {
+  font-family: var(--ra-sans);
+  font-weight: 500;
+  font-size: .72rem;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--ra-gold);
+  display: block;
+  margin-bottom: .9rem;
+}
+#ra-cmp-page h1 {
+  font-family: var(--ra-serif);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: var(--ra-ink);
+  margin: 0 0 .8rem;
+}
+#ra-cmp-page .ra-cmp-page-sub {
+  font-family: var(--ra-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--ra-ink-soft);
+  max-width: 680px;
+}
+#ra-cmp-page .ra-cmp-toolbar {
+  border: 1px solid var(--ra-line-soft);
+  border-radius: 6px 6px 0 0;
+  margin-top: 1.6rem;
+}
+/* on the standalone page the table lives in a bordered, rounded card and
+ * scrolls horizontally on its own (see mobile rules). */
+#ra-cmp-page .ra-cmp-tablewrap {
+  border: 1px solid var(--ra-line-soft);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--ra-void-2);
+}
+#ra-cmp-page .ra-cmp-share { margin-top: 1.4rem; }
+
+/* shared wrapper for the modal table too, so the sticky header + horizontal
+ * scroll behave consistently in both contexts */
+.ra-cmp-tablewrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+ * 7) MOBILE / RESPONSIVE
+ *    Table scrolls horizontally; first column (labels) stays sticky.
+ *    Bar compacts. Fonts stay large and legible.
+ * ========================================================================== */
+@media (max-width: 760px) {
+  /* make every compare table horizontally scrollable within its wrapper */
+  .ra-cmp-tablewrap { overflow-x: auto; }
+  .ra-cmp-table {
+    min-width: 560px;          /* force horizontal scroll rather than crush */
+    font-size: .95rem;
+  }
+  /* pin the spec-label column while value columns scroll under it */
+  .ra-cmp-table th[scope="row"],
+  .ra-cmp-table td.ra-cmp-label,
+  .ra-cmp-table .ra-cmp-rowlabel {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 124px;
+    width: 124px;
+    box-shadow: 1px 0 0 0 var(--ra-line-soft);
+  }
+  /* the sticky label cell on a diff row keeps both the tint and the bar,
+   * and must out-rank the value cells while scrolling */
+  .ra-cmp-diff > :first-child { z-index: 1; }
+  /* corner cell (top-left): sticky on BOTH axes so it never slides away */
+  .ra-cmp-table thead th:first-child,
+  .ra-cmp-prodhead.ra-cmp-corner {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+  }
+  .ra-cmp-prodhead-img { height: 64px; }
+  .ra-cmp-prodhead-name { font-size: 1.1rem; }
+
+  /* compact the bottom bar */
+  #ra-cmp-bar,
+  .ra-cmp-bar { padding: .6rem .6rem calc(.6rem + env(safe-area-inset-bottom, 0px)); }
+  .ra-cmp-bar-inner {
+    gap: .6rem;
+    padding: .6rem .6rem .6rem .9rem;
+    border-radius: 16px;       /* a pill is too tall when it wraps; soften */
+  }
+  .ra-cmp-count { font-size: .95rem; }
+  .ra-cmp-chip { font-size: .78rem; max-width: 150px; }
+  .ra-cmp-chip-img { width: 28px; height: 28px; }
+  .ra-cmp-bar-actions { gap: .5rem; }
+  .ra-cmp-clear { padding: .6rem .8rem; font-size: .72rem; }
+  .ra-cmp-go { padding: .7rem 1.1rem; font-size: .76rem; }
+
+  /* full-bleed modal on small screens (mirrors cart drawer going full-width) */
+  .ra-cmp-overlay { padding: 0; }
+  .ra-cmp-modal {
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  .ra-cmp-toolbar { padding: .85rem 1.1rem; }
+  #ra-cmp-page { padding-left: clamp(14px, 5vw, 24px); padding-right: clamp(14px, 5vw, 24px); }
+}
+
+/* very small phones: chips can hide their name to save room (JS may also do
+ * this; the rule keeps the bar from overflowing regardless) */
+@media (max-width: 420px) {
+  .ra-cmp-chip-name { max-width: 92px; }
+  .ra-cmp-count .ra-cmp-count-word { display: none; } /* show just the number */
+}
+
+/* ==========================================================================
+ * 8) MOTION PREFERENCES
+ * ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .ra-cmp-overlay,
+  .ra-cmp-modal,
+  .ra-cmp-toggle,
+  .card-img .ra-cmp-toggle,
+  .ra-cmp-go,
+  .ra-cmp-clear,
+  .ra-cmp-share,
+  .ra-cmp-chip-x,
+  .ra-cmp-x { transition: none; }
+}
+
+/* ===== Idea #501 integration patches (orchestrator) ===== */
+.ra-cmp-error{
+  margin:1rem 0;padding:.85rem 1.1rem;
+  border:1px solid #b3563f;border-left:3px solid #b3563f;border-radius:4px;
+  background:rgba(120,40,28,.18);color:var(--ra-ink);
+  font-family:var(--ra-sans);font-size:.95rem;line-height:1.5;
+}
+.card-noimg{position:relative;}
+.card-noimg .ra-cmp-toggle{
+  position:absolute;top:.7rem;right:.7rem;z-index:3;
+  padding:.42rem .7rem;font-size:.66rem;letter-spacing:.12em;
+  backdrop-filter:blur(4px);box-shadow:0 6px 18px rgba(0,0,0,.45);
+  opacity:0;transform:translateY(-4px);
+  transition:opacity .25s,transform .25s,background .25s,color .25s,border-color .25s;
+}
+.card:hover .card-noimg .ra-cmp-toggle,
+.card:focus-within .card-noimg .ra-cmp-toggle,
+.card-noimg .ra-cmp-toggle:focus-visible,
+.card-noimg .ra-cmp-toggle.is-active,
+.card-noimg .ra-cmp-toggle[aria-pressed="true"]{opacity:1;transform:translateY(0);}
+@media (hover:none),(max-width:768px){
+  .card-img .ra-cmp-toggle,
+  .card-noimg .ra-cmp-toggle{opacity:1;transform:none;}
+}
+
+/* ===== #501 fix: product-header image sizing + remove-x ===== */
+.ra-cmp-prodhead-img{display:flex;align-items:center;justify-content:center;height:88px;width:auto;margin:0 auto .7rem;overflow:hidden;}
+.ra-cmp-prodhead-img img{max-height:88px;max-width:100%;width:auto;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 12px 24px rgba(0,0,0,.55));}
+.ra-cmp-prodhead-x{position:absolute;top:.5rem;right:.5rem;width:30px;height:30px;display:flex;align-items:center;justify-content:center;padding:0;line-height:1;border:1px solid var(--ra-line);border-radius:999px;background:rgba(10,10,12,.6);color:var(--ra-ink-faint);font-size:1.15rem;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+.ra-cmp-prodhead-x:hover{background:var(--ra-gold);color:var(--ra-void);border-color:var(--ra-gold);}
+@media (max-width:760px){.ra-cmp-prodhead-img img{max-height:64px;}}
+
+/* ===== #501 fix: tighten standalone /compare top/bottom whitespace ===== */
+#ra-cmp-page{padding-top:clamp(84px,9vw,104px);padding-bottom:clamp(48px,7vw,84px);}
+
+/* ===== #501 tweak: lift the PDP compare toggle up to the top-right of the product info (by the name) ===== */
+.pd-info{position:relative;}
+.ra-addcart-wrap + .ra-cmp-toggle{position:absolute;top:0;right:0;margin:0;z-index:2;}
+@media (max-width:760px){.ra-addcart-wrap + .ra-cmp-toggle{position:static;margin-top:.7rem;}}

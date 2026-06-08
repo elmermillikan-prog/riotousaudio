@@ -1,0 +1,10 @@
+# build/runtime caches & working backups — NOT source
+tools/esb/pdfs-cache/
+**/node_modules/
+**/*.log
+*.bak
+*.bak.*
+**/*.predeploy.*
+**/*.old.*
+.DS_Store
+Thumbs.db

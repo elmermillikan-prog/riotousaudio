@@ -1,0 +1,286 @@
+{
+  "specs": {
+    "ASP-Q2": {
+      "desc": "The ASP-Q2 is a full-system preamp and 7-band parametric equalizer designed as a precision tuning tool for serious car audio systems. It delivers up to ±12 dB of correction at any point in the frequency spectrum through audiophile-grade internal components and precision pots, producing a maximum output of 7 V RMS. Separate bass-level control balances low frequencies against the highs, and each channel of both Main and Aux inputs has its own independent level adjustment.",
+      "narr": ["Key Features", [
+        "7-band parametric EQ with ±12 dB boost/cut per band across seven frequency ranges",
+        "Subwoofer output with continuously variable crossover from 30 – 300 Hz",
+        "Subsonic filter adjustable from 15 – 50 Hz protects woofers from harmful low-frequency energy",
+        "2-channel inputs (Main + Aux) with per-channel level trims; 3-channel outputs (Front, Rear, Sub)",
+        "<b>7 V RMS maximum output voltage</b> — well above typical head-unit preamp levels",
+        "90 dB S/N ratio and 0.03% THD through audiophile-grade signal path components"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "7 V RMS"],
+          ["S/N Ratio", "90 dB"],
+          ["THD", "0.03%"],
+          ["Channel Separation", "70 dB"]
+        ]],
+        ["Crossover / EQ", [
+          ["Equalizer Bands", "7 (parametric)"],
+          ["Equalization Range", "±12 dB"],
+          ["EQ Frequency Ranges", "40 Hz – 120 Hz (Bass), 100 Hz – 400 Hz (Low), 350 Hz – 900 Hz (Mid-Low), 650 Hz – 1.5 kHz (Mid), 1.2 kHz – 4.5 kHz (Mid-High), 4 kHz – 12 kHz (High), 8 kHz – 18 kHz (Super-High)"],
+          ["Subwoofer Frequency", "30 – 300 Hz"],
+          ["Subsonic Frequency", "15 – 50 Hz"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "2-channel RCA (Main, Aux)"],
+          ["Outputs", "3-channel RCA (Front, Rear, Sub)"]
+        ]]
+      ]
+    },
+    "ASP-X4": {
+      "desc": "The ASP-X4 is a 2/3/4-way electronic crossover with a 9.5 V line driver built in, accepting 4 channels of input and delivering up to 8 channels of output — including 6 main channels plus a dedicated 2-channel subwoofer output. Its versatile top-panel controls let users reconfigure it as a 2-way, 3-way, or 4-way crossover to suit virtually any system layout, with a switchable 12/24 dB slope and a dash-mountable remote for sub level control.",
+      "narr": ["Key Features", [
+        "Configurable as 2-way, 3-way, or <b>4-way electronic crossover</b> from a single unit",
+        "4-channel inputs (Rear + Front) driving 8 channels of output (6 main + 2 sub)",
+        "9.5 V RMS line driver output voltage — far above typical head-unit preamp levels",
+        "HP 1 filter 500 Hz – 5 kHz; BP 2 filter 50 Hz – 5 kHz; BP 3 filter 50 Hz – 3 kHz; LP 4 filter 45 Hz – 450 Hz",
+        "Subsonic filter adjustable 15 Hz – 60 Hz; selectable 12/24 dB slope",
+        "Dash remote control for channels 7/8 (sub); includes remote power supply"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"]
+        ]],
+        ["Crossover / EQ", [
+          ["Configuration", "2/3/4-way electronic crossover"],
+          ["HP 1 Filter", "500 Hz – 5 kHz"],
+          ["BP 2 Filter", "50 Hz – 5 kHz"],
+          ["BP 3 Filter", "50 Hz – 3 kHz"],
+          ["LP 4 Filter", "45 Hz – 450 Hz"],
+          ["Subsonic Filter", "15 Hz – 60 Hz"],
+          ["Slope", "12 or 24 dB (switchable)"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "4-channel RCA (Rear + Front)"],
+          ["Outputs", "8-channel RCA (6 main + 2 sub)"]
+        ]],
+        ["Controls", [
+          ["Remote", "Dash remote control for Ch. 7/8; remote power supply included"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "245 × 190 × 39 mm"]
+        ]]
+      ]
+    },
+    "ASP-X2": {
+      "desc": "The ASP-X2 is a 2-way electronic crossover with an integrated 9.5 V line driver, taking 2 channels of input and providing 2 channels of output configurable as low-pass/band-pass or high-pass. It includes an LP filter (50 – 450 Hz), an HP filter (450 Hz – 4.5 kHz), a subsonic filter (15 – 60 Hz), and a ×10 switch on output 2 filters for extended range, plus two sets of inputs for fading and a dash remote control.",
+      "narr": ["Key Features", [
+        "2-way electronic crossover with <b>9.5 V RMS line driver</b> output",
+        "LP filter continuously variable 50 – 450 Hz; HP filter 450 Hz – 4.5 kHz",
+        "Subsonic filter adjustable 15 – 60 Hz to protect woofers",
+        "Output 2 BPF range extends to 15 Hz – 4.5 kHz via ×10 switch",
+        "Two sets of inputs support front/rear fading",
+        "Dash remote control included"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"]
+        ]],
+        ["Crossover / EQ", [
+          ["Configuration", "2-way electronic crossover"],
+          ["LP Filter", "50 Hz – 450 Hz"],
+          ["HP Filter", "450 Hz – 4.5 kHz"],
+          ["Subsonic Filter", "15 Hz – 60 Hz"],
+          ["Output 2 BPF (×10)", "15 Hz – 4.5 kHz"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "2-channel RCA (Rear + Front); 2 sets for fading"],
+          ["Outputs", "2-channel RCA (Low/BPF + High)"]
+        ]],
+        ["Controls", [
+          ["Remote", "Dash remote control included"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "127 × 119 × 39 mm"]
+        ]]
+      ]
+    },
+    "ASP-L6": {
+      "desc": "The ASP-L6 is a 6-channel, 9.5 V line driver that adds 24 dB of gain to restore signal headroom and dynamic range lost at low head-unit preamp output voltages. It operates as a 6-in / 6-out line driver or, with inputs tied together, as a 2-in / 6-out distribution amplifier driving up to three amplifiers simultaneously from a single RCA pair. Audiophile Elna Silmic II capacitors and Analog Devices OP 275 op-amps keep THD + Noise below 0.01%.",
+      "narr": ["Key Features", [
+        "6-channel 9.5 V RMS line driver with <b>24 dB of signal gain</b>",
+        "Operates as 6-ch in / 6-ch out line driver or 2-ch in / 6-ch out distribution amplifier",
+        "THD + Noise below 0.01% using Elna Silmic II caps and Analog Devices OP 275 op-amps",
+        "Dash bass remote control for outputs 5/6",
+        "Remote power supply included"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"],
+          ["Signal Gain", "24 dB"],
+          ["THD + Noise", "< 0.01%"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "6-channel RCA (or 2-ch with tie)"],
+          ["Outputs", "6-channel RCA"]
+        ]],
+        ["Controls", [
+          ["Remote", "Dash bass remote for outputs 5/6; remote power supply included"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "164 × 190 × 39 mm"]
+        ]]
+      ]
+    },
+    "ASP-L2BT": {
+      "desc": "The ASP-L2 BT is a 2-channel, 9.5 V line driver with Bluetooth streaming, delivering 24 dB of gain across 4 output channels so a single source can drive two amplifiers without Y-adapters. It accepts a direct aux connection from a smart device or MP3 player — ideal for classic cars, motorcycles, or side-by-sides — and includes a dash remote volume control. Elna Silmic II capacitors and Analog Devices OP 275 op-amps hold THD + Noise below 0.01%.",
+      "narr": ["Key Features", [
+        "2-channel line driver with <b>Bluetooth streaming</b> and 4 RCA outputs at 9.5 V RMS each",
+        "24 dB of signal gain eliminates the need to over-drive amplifier input gain",
+        "Direct aux input from smart device or MP3 player — no head unit required",
+        "Two sets of preamp outputs allow driving separate main and bass amplifiers without Y-adapters",
+        "Dash remote volume control included",
+        "THD + Noise below 0.01% using Elna Silmic II caps and OP 275 op-amps"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"],
+          ["Signal Gain", "24 dB"],
+          ["THD + Noise", "< 0.01%"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "2-channel RCA; direct aux input from smart device/MP3"],
+          ["Outputs", "4-channel RCA (2 sets at 9.5 V RMS each)"]
+        ]],
+        ["Controls", [
+          ["Remote", "Dash remote volume control included"],
+          ["Bluetooth", "Bluetooth streaming"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "127 × 119 × 39 mm"]
+        ]]
+      ]
+    },
+    "ASP-OE8": {
+      "desc": "The ASP-OE8 is an 8-channel active OEM integration adapter that converts factory speaker-level signals into 8 channels of 9.5 V RCA output, preserving the full bandwidth and dynamics that passive LOC adapters strip away. High-end op-amps and capacitors, a low-noise circuit design, built-in channel summing, and a beefy power supply ensure the factory head unit delivers sound quality on par with an aftermarket source unit.",
+      "narr": ["Key Features", [
+        "<b>8-channel speaker-level to RCA conversion</b> at 9.5 V output — fully active design",
+        "High-end op-amps and capacitors with low-noise circuit design",
+        "Built-in channel summing for flexible system integration",
+        "Dash remote included",
+        "Beefy power supply handles high factory amplifier output levels"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "8-channel speaker level"],
+          ["Outputs", "8-channel RCA (9.5 V)"]
+        ]],
+        ["Controls", [
+          ["Remote", "Dash remote included"],
+          ["Channel Summing", "Built in"]
+        ]]
+      ]
+    },
+    "ASP-OE2": {
+      "desc": "The ASP-OE2 is a 2-channel active OEM integration adapter that converts factory speaker-level signals to 9.5 V RCA outputs while restoring the bass content that many automakers deliberately roll off at higher volumes to protect factory woofers. This bass recovery circuit makes the factory head unit perform like a full-range aftermarket source unit without any passive frequency loss.",
+      "narr": ["Key Features", [
+        "2-channel active OEM adapter — speaker level in, <b>9.5 V RCA out</b>",
+        "Bass Recovery circuit re-equalizes low frequencies removed by factory head units at higher volumes",
+        "Active design eliminates the bass rolloff and mid/high distortion of passive LOC adapters"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "2-channel speaker level"],
+          ["Outputs", "2-channel RCA (9.5 V)"]
+        ]],
+        ["Controls", [
+          ["Bass Recovery", "Factory bass re-equalization built in"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "127 × 119 × 39 mm"]
+        ]]
+      ]
+    },
+    "ASP-OEB": {
+      "desc": "The ASP-OEB is a compact 2-channel active OEM integration adapter, converting factory speaker-level signals directly to 9.5 V RCA outputs in a true active circuit — no passive components in the signal path. Its small footprint makes it easy to tuck behind the factory head unit or in tight installation spaces.",
+      "narr": ["Key Features", [
+        "True active 2-channel OEM adapter — <b>no passive signal loss</b>",
+        "2-channel speaker-level inputs to 2-channel 9.5 V RCA outputs",
+        "Compact form factor at 83 × 59 × 26 mm for tight installation spaces"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Max Output Voltage", "9.5 V RMS"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "2-channel speaker level"],
+          ["Outputs", "2-channel RCA (9.5 V)"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "83 × 59 × 26 mm"]
+        ]]
+      ]
+    },
+    "ASP-L2T": {
+      "desc": "The ASP-L2T is a 2-channel line conditioner and noise filter that uses custom-designed, custom-wound high-efficiency transformers to eliminate ground-loop noise by breaking the direct connection between different reference ground systems, without altering signal level, impedance, or bass content. Signal-to-noise exceeds 130 dB and THD + Noise is below 0.1% across the full 20 Hz – 20 kHz range, with 1:1 in/out voltage and impedance.",
+      "narr": ["Key Features", [
+        "Custom-wound high-efficiency transformers eliminate <b>ground-loop noise</b> without passive bass loss",
+        "Signal-to-noise ratio exceeds 130 dB",
+        "THD < 0.1% across 20 Hz – 20 kHz",
+        "1:1 in/out voltage and impedance — no volume or frequency loss",
+        "Compact 100 × 59 × 26 mm footprint"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["Signal-to-Noise", "> 130 dB"],
+          ["THD", "< 0.1% (20 Hz – 20 kHz)"],
+          ["In/Out Voltage/Impedance", "1:1"]
+        ]],
+        ["Inputs & Outputs", [
+          ["Inputs", "2-channel RCA"],
+          ["Outputs", "2-channel RCA"]
+        ]],
+        ["Dimensions", [
+          ["Overall (L × W × H)", "100 × 59 × 26 mm"]
+        ]]
+      ]
+    },
+    "Z-OTG-BTC": {
+      "desc": "The Z-OTG-BT C is a high-quality audio converter combining a USB OTG input (192 kHz/32-bit) with Qualcomm Bluetooth 5.2 (supporting aptX, aptX HD, and aptX Adaptive at 192 kHz/24-bit) and a TI PCM5102A DAC running at up to 384 kHz/32-bit. It outputs simultaneously to optical and coaxial digital outputs (compatible with 48/96/192 kHz digital inputs) and a stereo RCA pair at 1.5 V RMS, powered from a standard 9 – 16 V DC supply.",
+      "narr": ["Key Features", [
+        "USB OTG input at 192 kHz/32-bit with device charging function",
+        "<b>Qualcomm Bluetooth 5.2</b> with aptX, aptX HD, and aptX Adaptive at 192 kHz/24-bit",
+        "TI PCM5102A DAC capable of 384 kHz/32-bit conversion",
+        "JRC 5532 high-performance, low-noise dual op-amp in the signal path",
+        "Simultaneous optical and coaxial digital outputs (48/96/192 kHz compatible)",
+        "Stereo RCA outputs at 1.5 V RMS; powered from 9 – 16 V DC"
+      ]],
+      "sections": [
+        ["Audio Performance", [
+          ["DAC", "TI PCM5102A, 384 kHz/32-bit"],
+          ["Op-Amp", "JRC 5532 (high-performance low-noise dual OP)"],
+          ["RCA Output Level", "1.5 V RMS"]
+        ]],
+        ["Inputs & Outputs", [
+          ["OTG Input", "192 kHz/32-bit (supports device charging)"],
+          ["Bluetooth", "Qualcomm v5.2 — aptX, aptX HD, aptX Adaptive at 192 kHz/24-bit"],
+          ["Digital Outputs", "Optical and coaxial (48/96/192 kHz digital input compatible)"],
+          ["RCA Outputs", "Left + Right, 1.5 V RMS"]
+        ]],
+        ["Power", [
+          ["Supply", "DC 9 – 16 V"]
+        ]],
+        ["Dimensions", [
+          ["Overall (mm)", "140 × 23 × 96"]
+        ]]
+      ]
+    }
+  },
+  "series": {
+    "Zapco|Analog Processors": {
+      "intro": [
+        "In 1978, Zapco introduced the world to audiophile signal processing with the iconic PEQ 18-band equalizer — the first high-voltage output processor for the car. Built with high-grade mil-spec slide pots and premium internal components, it showed the industry what in-car sound processing should sound like. That foundation was followed by a series of audiophile-quality processors: the first parametric car EQ, innovative electronic crossovers, a 30-band mono EQ, an advanced noise gate, and even an outboard D/A converter that surpassed most home converters of the era.",
+        "Now that most head units and amplifiers have processing built in, Zapco continues to offer outboard processors for the same reason a top home or pro system separates its tuner, preamp, and power amp: each unit doing one job, and doing it right. Zapco processors use the same Elna Silmic II RFS caps and Analog Devices OP 275 op-amps found in the LE/LX competition amplifier series, paired with custom-wound precision pots built to Zapco's own specification. For those who believe the live musical experience is worth the extra effort — and that the sound is what matters most — Zapco has been the driving force since 1974."
+      ]
+    }
+  }
+}

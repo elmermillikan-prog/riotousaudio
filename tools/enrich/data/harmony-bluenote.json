@@ -1,0 +1,342 @@
+{
+  "specs": {
+    "HB68II": {
+      "desc": "The HB 68 II is a pure 8-channel DSP with 31-band equalization and a full suite of control features including I/O Matrix, LP and HP Filters, Speaker Assignment, Delay, Levels, and Polarity. It features HD Bluetooth streaming, an integrated Music Player with OTG input, and supports both PC and mobile (smartphone) control via a dedicated app. The optional HB DSP II-R remote allows volume, preset, source, and song-navigation control from the dashboard.",
+      "narr": ["Key Features", [
+        "8-channel DSP with <b>31-band EQ per output channel</b>",
+        "HD Bluetooth streaming and integrated Music Player (App)",
+        "2-Ch RCA inputs, 6-Ch high-level inputs, 8-Ch RCA outputs",
+        "I/O Mixing Matrix with Butterworth, Bessel, and Linkwitz crossover types",
+        "Crossover slopes 6 – 48 dB/Oct., PC and mobile APP control",
+        "Compatible with optional HB DSP II-R remote for volume, preset, and source selection"
+      ]],
+      "sections": [
+        ["DSP / Processing", [
+          ["DSP Channels", "8"],
+          ["EQ Bands", "31-Bands per output channel"],
+          ["I/O Mixing Matrix", "Yes"],
+          ["Crossover Types", "Butterworth, Bessel, Linkwitz"],
+          ["Crossover Slopes", "6 – 48 dB/Oct."],
+          ["S/N Ratio", "> 100 dB"],
+          ["THD", "< 0.05%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity", [
+          ["RCA Inputs", "2-Channels"],
+          ["High-Level Inputs", "6-Channels"],
+          ["RCA Outputs", "8-Channels"],
+          ["Input Sources", "Aux, BT, High-Level, USB, OTG"],
+          ["Bluetooth", "Yes (HD Streaming)"],
+          ["Music Player", "Yes (App)"],
+          ["DSP Control", "PC and Mobile APP"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "160 × 126 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB46II4A": {
+      "desc": "The HB 46 II 4A is a 6-channel DSP combined with an integrated 4-channel Class AB amplifier, delivering 4 × 23 W RMS at 4 Ω and 4 × 35 W RMS at 2 Ω (4 × 70 W Max). It features 31-band equalization, HD Bluetooth streaming, an integrated Music Player, OTG input, and full PC and mobile control via a dedicated app. The optional HB DSP II-R remote provides dashboard-level control of volume, presets, source selection, and Music Player navigation.",
+      "narr": ["Key Features", [
+        "6-channel DSP with <b>integrated 4-Ch Class AB amplifier</b>",
+        "31-band EQ per output channel with I/O Mixing Matrix",
+        "RMS: 4 × 23 W (4 Ω) / 4 × 35 W (2 Ω); 4 × 70 W Max",
+        "HD Bluetooth streaming and integrated Music Player (App)",
+        "2-Ch RCA inputs, 4-Ch high-level inputs, 6-Ch RCA outputs",
+        "PC and mobile APP DSP control; optional remote for dashboard use"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["RMS Power (4 Ω)", "4 × 23 W"],
+          ["RMS Power (2 Ω)", "4 × 35 W"],
+          ["Max Power", "4 × 70 W"],
+          ["Amplifier Class", "Class AB"]
+        ]],
+        ["DSP / Processing", [
+          ["DSP Channels", "6"],
+          ["EQ Bands", "31-Bands per output channel"],
+          ["I/O Mixing Matrix", "Yes"],
+          ["Crossover Types", "Butterworth, Bessel, Linkwitz"],
+          ["Crossover Slopes", "6 – 48 dB/Oct."],
+          ["S/N Ratio", "> 100 dB"],
+          ["THD", "< 0.05%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity", [
+          ["RCA Inputs", "2-Channels"],
+          ["High-Level Inputs", "4-Channels"],
+          ["RCA Outputs", "6-Channels"],
+          ["Input Sources", "Aux, BT, High-Level, USB, OTG"],
+          ["Bluetooth", "Yes (HD Streaming)"],
+          ["Music Player", "Yes (App)"],
+          ["DSP Control", "PC and Mobile APP"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "160 × 126 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB48II4A": {
+      "desc": "The HB 48 II 4A is an 8-channel DSP combined with an integrated 4-channel Class AB amplifier, delivering 4 × 23 W RMS at 4 Ω and 4 × 35 W RMS at 2 Ω (4 × 70 W Max). It features 31-band equalization, HD Bluetooth streaming, an integrated Music Player, OTG input, and full PC and mobile control via a dedicated app. The optional HB DSP II-R remote provides dashboard-level control of volume, presets, source selection, and Music Player navigation.",
+      "narr": ["Key Features", [
+        "8-channel DSP with <b>integrated 4-Ch Class AB amplifier</b>",
+        "31-band EQ per output channel with I/O Mixing Matrix",
+        "RMS: 4 × 23 W (4 Ω) / 4 × 35 W (2 Ω); 4 × 70 W Max",
+        "HD Bluetooth streaming and integrated Music Player (App)",
+        "2-Ch RCA inputs, 4-Ch high-level inputs, 8-Ch RCA outputs",
+        "PC and mobile APP DSP control; optional remote for dashboard use"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["RMS Power (4 Ω)", "4 × 23 W"],
+          ["RMS Power (2 Ω)", "4 × 35 W"],
+          ["Max Power", "4 × 70 W"],
+          ["Amplifier Class", "Class AB"]
+        ]],
+        ["DSP / Processing", [
+          ["DSP Channels", "8"],
+          ["EQ Bands", "31-Bands per output channel"],
+          ["I/O Mixing Matrix", "Yes"],
+          ["Crossover Types", "Butterworth, Bessel, Linkwitz"],
+          ["Crossover Slopes", "6 – 48 dB/Oct."],
+          ["S/N Ratio", "> 100 dB"],
+          ["THD", "< 0.05%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity", [
+          ["RCA Inputs", "2-Channels"],
+          ["High-Level Inputs", "4-Channels"],
+          ["RCA Outputs", "8-Channels"],
+          ["Input Sources", "Aux, BT, High-Level, USB, OTG"],
+          ["Bluetooth", "Yes (HD Streaming)"],
+          ["Music Player", "Yes (App)"],
+          ["DSP Control", "PC and Mobile APP"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "160 × 126 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB410II8A": {
+      "desc": "The HB 410 II 8A is a 10-channel DSP combined with an integrated 8-channel Class AB amplifier, delivering 8 × 23 W RMS at 4 Ω and 8 × 35 W RMS at 2 Ω (8 × 70 W Max). It features 31-band equalization, HD Bluetooth streaming, an integrated Music Player, OTG input, and full PC and mobile control via a dedicated app. The optional HB DSP II-R remote provides dashboard-level control of volume, presets, source selection, and Music Player navigation.",
+      "narr": ["Key Features", [
+        "10-channel DSP with <b>integrated 8-Ch Class AB amplifier</b>",
+        "31-band EQ per output channel with I/O Mixing Matrix",
+        "RMS: 8 × 23 W (4 Ω) / 8 × 35 W (2 Ω); 8 × 70 W Max",
+        "HD Bluetooth streaming and integrated Music Player (App)",
+        "2-Ch RCA inputs, 4-Ch high-level inputs, 10-Ch RCA outputs",
+        "PC and mobile APP DSP control; optional remote for dashboard use"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["RMS Power (4 Ω)", "8 × 23 W"],
+          ["RMS Power (2 Ω)", "8 × 35 W"],
+          ["Max Power", "8 × 70 W"],
+          ["Amplifier Class", "Class AB"]
+        ]],
+        ["DSP / Processing", [
+          ["DSP Channels", "10"],
+          ["EQ Bands", "31-Bands per output channel"],
+          ["I/O Mixing Matrix", "Yes"],
+          ["Crossover Types", "Butterworth, Bessel, Linkwitz"],
+          ["Crossover Slopes", "6 – 48 dB/Oct."],
+          ["S/N Ratio", "> 100 dB"],
+          ["THD", "< 0.05%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity", [
+          ["RCA Inputs", "2-Channels"],
+          ["High-Level Inputs", "4-Channels"],
+          ["RCA Outputs", "10-Channels"],
+          ["Input Sources", "Aux, BT, High-Level, USB, OTG"],
+          ["Bluetooth", "Yes (HD Streaming)"],
+          ["Music Player", "Yes (App)"],
+          ["DSP Control", "PC and Mobile APP"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "190 × 126 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB810II8AD": {
+      "desc": "The HB 810 II 8AD is a 10-channel DSP with an integrated 8-channel hybrid amplifier section combining 4-channel Class AB and 4-channel bridgeable Class D stages. The Class AB channels deliver 4 × 35 W (4 Ω) / 4 × 50 W (2 Ω) RMS, while the Class D channels deliver 4 × 100 W (4 Ω) / 4 × 150 W (2 Ω) / 2 × 300 W (4 Ω bridged) RMS. It includes 31-band EQ, HD Bluetooth streaming, integrated Music Player, optical and OTG inputs, and full PC and mobile DSP control.",
+      "narr": ["Key Features", [
+        "10-channel DSP with <b>4-Ch Class AB + 4-Ch bridgeable Class D amp</b>",
+        "Class AB RMS: 4 × 35 W (4 Ω) / 4 × 50 W (2 Ω)",
+        "Class D RMS: 4 × 100 W (4 Ω) / 4 × 150 W (2 Ω) / 2 × 300 W (4 Ω br.)",
+        "31-band EQ per output channel with I/O Mixing Matrix",
+        "Optical digital input plus Aux, BT, High-Level, USB, OTG sources",
+        "HD Bluetooth streaming, integrated Music Player, PC and mobile APP control"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["Class AB RMS (4 Ω)", "4 × 35 W"],
+          ["Class AB RMS (2 Ω)", "4 × 50 W"],
+          ["Class D RMS (4 Ω)", "4 × 100 W"],
+          ["Class D RMS (2 Ω)", "4 × 150 W"],
+          ["Class D RMS (4 Ω Bridged)", "2 × 300 W"],
+          ["Amplifier Class", "Class AB + Class D"]
+        ]],
+        ["DSP / Processing", [
+          ["DSP Channels", "10"],
+          ["EQ Bands", "31-Bands per output channel"],
+          ["I/O Mixing Matrix", "Yes"],
+          ["Crossover Types", "Butterworth, Bessel, Linkwitz"],
+          ["Crossover Slopes", "6 – 48 dB/Oct."],
+          ["S/N Ratio", "> 100 dB"],
+          ["THD", "< 0.05%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity", [
+          ["RCA Inputs", "2-Channels"],
+          ["High-Level Inputs", "8-Channels"],
+          ["RCA Outputs", "10-Channels"],
+          ["Input Sources", "Aux, BT, High-Level, USB, OTG, Optical"],
+          ["Bluetooth", "Yes (HD Streaming)"],
+          ["Music Player", "Yes (App)"],
+          ["DSP Control", "PC and Mobile APP"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "190 × 166 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB104DII": {
+      "desc": "The HB 104D II is a 4-channel Class D amplifier delivering 4 × 100 W RMS at 4 Ω, 4 × 150 W RMS at 2 Ω, and 2 × 250 W RMS bridged at 4 Ω. It accepts both RCA low-level and high-level inputs and features an LP/Full/HP electronic crossover with adjustable frequency for precise speaker matching. Gain control spans 0.25 V to 6 V for optimal output-level adjustment.",
+      "narr": ["Key Features", [
+        "4-channel Class D amplifier: <b>4 × 150 W RMS at 2 Ω</b>",
+        "Bridgeable: 2 × 250 W RMS at 4 Ω",
+        "LP / Full / HP electronic crossover, 30 Hz – 250 Hz",
+        "RCA low-level and high-level inputs",
+        "Gain control: 0.25 V – 6 V",
+        "Input impedance 22 kΩ, input sensitivity 250 mV – 6 V"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["RMS Power (4 Ω)", "4 × 100 W"],
+          ["RMS Power (2 Ω)", "4 × 150 W"],
+          ["RMS Power (4 Ω Bridged)", "2 × 250 W"],
+          ["Amplifier Class", "Class D"],
+          ["Channels", "4"]
+        ]],
+        ["Performance", [
+          ["S/N Ratio", "> 90 dB"],
+          ["THD", "< 0.1%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Input Impedance", "22 kΩ"],
+          ["Input Sensitivity", "250 mV – 6 V"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity / Controls", [
+          ["RCA Inputs", "4-Channels"],
+          ["High-Level Inputs", "4-Channels"],
+          ["Gain Control", "6 V – 0.25 V"],
+          ["Crossover", "HP / Full / LP"],
+          ["Crossover Frequency", "30 Hz – 250 Hz"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "170 × 115 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB154DII": {
+      "desc": "The HB 154D II is a 4-channel Class D amplifier delivering 4 × 150 W RMS at 4 Ω, 4 × 200 W RMS at 2 Ω, and 2 × 350 W RMS bridged at 4 Ω. It accepts both RCA low-level and high-level inputs and features an LP/Full/HP electronic crossover with adjustable frequency for precise speaker matching. Gain control spans 0.25 V to 6 V for optimal output-level adjustment.",
+      "narr": ["Key Features", [
+        "4-channel Class D amplifier: <b>4 × 200 W RMS at 2 Ω</b>",
+        "Bridgeable: 2 × 350 W RMS at 4 Ω",
+        "LP / Full / HP electronic crossover, 30 Hz – 250 Hz",
+        "RCA low-level and high-level inputs",
+        "Gain control: 0.25 V – 6 V",
+        "Input impedance 22 kΩ, input sensitivity 250 mV – 6 V"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["RMS Power (4 Ω)", "4 × 150 W"],
+          ["RMS Power (2 Ω)", "4 × 200 W"],
+          ["RMS Power (4 Ω Bridged)", "2 × 350 W"],
+          ["Amplifier Class", "Class D"],
+          ["Channels", "4"]
+        ]],
+        ["Performance", [
+          ["S/N Ratio", "> 90 dB"],
+          ["THD", "< 0.1%"],
+          ["Frequency Response", "20 Hz – 20 kHz"],
+          ["Input Impedance", "22 kΩ"],
+          ["Input Sensitivity", "250 mV – 6 V"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity / Controls", [
+          ["RCA Inputs", "4-Channels"],
+          ["High-Level Inputs", "4-Channels"],
+          ["Gain Control", "6 V – 0.25 V"],
+          ["Crossover", "HP / Full / LP"],
+          ["Crossover Frequency", "30 Hz – 250 Hz"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "180 × 115 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    },
+
+    "HB501DII": {
+      "desc": "The HB 501D II is a mono Class D amplifier delivering 1 × 300 W RMS at 4 Ω and 1 × 500 W RMS at 2 Ω, optimized for subwoofer duty. The control panel provides gain (0.25 V – 6 V), a variable LP crossover (30 – 80 Hz), a subsonic filter (20 – 50 Hz), and a variable bass boost (0 – 12 dB). A bass-level remote is included for instant dashboard adjustment.",
+      "narr": ["Key Features", [
+        "Mono Class D amplifier: <b>1 × 500 W RMS at 2 Ω</b>",
+        "Variable LP crossover: 30 – 80 Hz",
+        "Subsonic filter: 20 – 50 Hz",
+        "Variable bass boost: 0 – 12 dB",
+        "Gain control: 0.25 V – 6 V; includes bass remote",
+        "2-Ch RCA inputs, input sensitivity 250 mV – 6 V"
+      ]],
+      "sections": [
+        ["Power Output", [
+          ["RMS Power (4 Ω)", "1 × 300 W"],
+          ["RMS Power (2 Ω)", "1 × 500 W"],
+          ["Amplifier Class", "Class D"],
+          ["Channels", "1"]
+        ]],
+        ["Performance", [
+          ["S/N Ratio", "> 90 dB"],
+          ["THD", "< 0.1%"],
+          ["Frequency Response", "10 Hz – 180 Hz"],
+          ["Input Impedance", "20 kΩ"],
+          ["Input Sensitivity", "250 mV – 6 V"],
+          ["Supply Voltage", "12 V – 14.4 V"]
+        ]],
+        ["Connectivity / Controls", [
+          ["RCA Inputs", "2-Channels"],
+          ["High-Level Inputs", "None"],
+          ["Gain Control", "6 V – 0.25 V"],
+          ["Crossover", "LP"],
+          ["Crossover Frequency", "30 Hz – 80 Hz"],
+          ["Subsonic Filter", "20 Hz – 50 Hz"],
+          ["Bass Boost", "0 – 12 dB"],
+          ["Bass Remote", "Included"]
+        ]],
+        ["Dimensions", [
+          ["Unit Dimensions", "175 × 115 × 45.5 mm (L × W × H)"]
+        ]]
+      ]
+    }
+  },
+
+  "series": {
+    "Harmony|Blue Note": {
+      "intro": [
+        "ZAPCO presents the Harmony Blue Note Series — a new full line of compact DSP/Amps and standalone amplifiers featuring PC and mobile control tools, HD Bluetooth streaming, and an integrated Music Player. The DSP/Amp lineup spans five units: the HB 68 II (8-channel DSP), the HB 46 II 4A (6-channel DSP with 4-channel Class AB amp), the HB 48 II 4A (8-channel DSP with 4-channel Class AB amp), the HB 410 II 8A (10-channel DSP with 8-channel Class AB amp), and the HB 810 II 8AD (10-channel DSP with 4-channel Class AB plus 4-channel Class D amp).",
+        "The Series also includes three dedicated amplifiers: the HB 104D II (4-channel Class D, 150 W/Ch at 2 Ω), the HB 154D II (4-channel Class D, 200 W/Ch at 2 Ω), and the HB 501D II (mono Class D, 500 W at 2 Ω). All DSP units share 31-band equalization, an I/O Mixing Matrix, adjustable crossover slopes from 6 to 48 dB/Oct., and a fully featured GUI for both PC and mobile tuning — from simple setups to advanced installs. The standalone amps feature electronic crossovers and low/high-level inputs for seamless system integration."
+      ]
+    }
+  }
+}

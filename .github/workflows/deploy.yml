@@ -1,0 +1,16 @@
+name: deploy
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'site/**', 'scripts/deploy.sh', '.github/workflows/deploy.yml' ]
+  workflow_dispatch:
+concurrency:
+  group: ra-deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: [ self-hosted, ra ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy site/ to live nginx dir
+        run: bash scripts/deploy.sh

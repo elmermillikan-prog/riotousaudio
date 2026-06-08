@@ -1,0 +1,182 @@
+{
+ "specs": {
+  "3.6K2": {
+   "desc": "The 3.6K2 is ESB's 3000 Series 2-way component speaker system — 3.165 + 3.28. Conceived and built in Italy.",
+   "narr": [
+    "In the System",
+    [
+     "3.165 — 6.5”/165 mm mid-woofer",
+     "3.28 — 1.1”/28 mm dome tweeter"
+    ]
+   ],
+   "sections": [
+    [
+     "System Configuration",
+     [
+      [
+       "Type",
+       "2-way component speaker system"
+      ],
+      [
+       "Mid-Woofer",
+       "3.165"
+      ],
+      [
+       "Tweeter",
+       "3.28"
+      ]
+     ]
+    ],
+    [
+     "Power & Performance",
+     [
+      [
+       "Power Handling",
+       "120 W RMS · 240 W peak"
+      ],
+      [
+       "Nominal Impedance",
+       "4 Ohm"
+      ]
+     ]
+    ]
+   ]
+  },
+  "3.6K2X": {
+   "desc": "The 3.6K2X is ESB's 3000 Series 2-way component speaker system with crossover — 3.165 + 3.28, matched by the 3.6K2 CX passive crossover. Conceived and built in Italy.",
+   "narr": [
+    "In the System",
+    [
+     "3.165 — 6.5”/165 mm mid-woofer",
+     "3.28 — 1.1”/28 mm dome tweeter",
+     "3.6K2 CX — 2-way passive crossover"
+    ]
+   ],
+   "sections": [
+    [
+     "System Configuration",
+     [
+      [
+       "Type",
+       "2-way component speaker system with crossover"
+      ],
+      [
+       "Mid-Woofer",
+       "3.165"
+      ],
+      [
+       "Tweeter",
+       "3.28"
+      ],
+      [
+       "Crossover",
+       "3.6K2 CX"
+      ]
+     ]
+    ],
+    [
+     "Power & Performance",
+     [
+      [
+       "Power Handling",
+       "120 W RMS · 240 W peak"
+      ],
+      [
+       "Nominal Impedance",
+       "4 Ohm"
+      ]
+     ]
+    ]
+   ]
+  },
+  "3.6K3": {
+   "desc": "The 3.6K3 is ESB's 3000 Series 3-way component speaker system — 3.165 + 3.65 + 3.28. Conceived and built in Italy.",
+   "narr": [
+    "In the System",
+    [
+     "3.165 — 6.5”/165 mm mid-woofer",
+     "3.65 — 2.5”/65 mm midrange",
+     "3.28 — 1.1”/28 mm dome tweeter"
+    ]
+   ],
+   "sections": [
+    [
+     "System Configuration",
+     [
+      [
+       "Type",
+       "3-way component speaker system"
+      ],
+      [
+       "Mid-Woofer",
+       "3.165"
+      ],
+      [
+       "Midrange",
+       "3.65"
+      ],
+      [
+       "Tweeter",
+       "3.28"
+      ]
+     ]
+    ],
+    [
+     "Power & Performance",
+     [
+      [
+       "Power Handling",
+       "120 W RMS · 240 W peak"
+      ],
+      [
+       "Nominal Impedance",
+       "4 Ohm"
+      ]
+     ]
+    ]
+   ]
+  },
+  "3.6K3U": {
+   "desc": "The 3.6K3U is ESB's 3000 Series 3-way component speaker system with UMA — 3.165 + 3.UMA. Conceived and built in Italy.",
+   "narr": [
+    "In the System",
+    [
+     "3.165 — 6.5”/165 mm mid-woofer",
+     "3.UMA — 2-way mid-high (UMA) unit"
+    ]
+   ],
+   "sections": [
+    [
+     "System Configuration",
+     [
+      [
+       "Type",
+       "3-way component speaker system with UMA"
+      ],
+      [
+       "Mid-Woofer",
+       "3.165"
+      ],
+      [
+       "Mid-High (UMA)",
+       "3.UMA"
+      ]
+     ]
+    ],
+    [
+     "Power & Performance",
+     [
+      [
+       "Power Handling",
+       "120 W RMS · 240 W peak"
+      ],
+      [
+       "Nominal Impedance",
+       "4 Ohm"
+      ]
+     ]
+    ]
+   ]
+  }
+ }
+}

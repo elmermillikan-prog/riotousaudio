@@ -1,0 +1,188 @@
+{
+  "specs": {
+    "HB1.6K2X": {
+      "desc": "The HR 6K2X is a 6.5\"/165 mm 2-way component speaker system with a 0.8\"/20 mm silk dome tweeter and a 12 dB in-line tweeter crossover. It handles 60 W RMS (120 W transient) with a nominal impedance of 4 Ω and a frequency response of 65 Hz – 20 kHz. The woofer features a pressed paper cone, aluminum voice coil support, rubber surround, and a high-grade ferrite magnet motor.",
+      "narr": ["Key Features", [
+        "6.5\"/165 mm paper-cone mid-woofer with aluminum voice coil support for improved thermal dissipation",
+        "0.8\"/20 mm <b>silk dome tweeter</b> with high-grade neodymium magnet for extended high-frequency response",
+        "12 dB in-line tweeter crossover built to handle higher power than the speakers",
+        "Aerodynamically designed open basket optimizes ventilation and decompression",
+        "Rubber surround for high damping and transversal stability",
+        "Compatible with factory head units or aftermarket amplifiers"
+      ]],
+      "sections": [
+        ["Power Handling", [
+          ["RMS Power", "60 W"],
+          ["Transient (Peak) Power", "120 W"]
+        ]],
+        ["Acoustic Performance", [
+          ["Sensitivity", "89 dB 2.83v/1m"],
+          ["Frequency Response", "65 Hz – 20 kHz"],
+          ["Nominal Impedance", "4 Ω"]
+        ]],
+        ["Design / Materials", [
+          ["Woofer Size", "6.5\"/165 mm"],
+          ["Cone Material", "Pressed paper"],
+          ["Surround", "Rubber"],
+          ["Voice Coil Support", "Aluminum"],
+          ["Magnet (Woofer)", "High-grade ferrite"],
+          ["Tweeter Size", "0.8\"/20 mm"],
+          ["Tweeter Type", "Silk dome"],
+          ["Tweeter Magnet", "Neodymium"],
+          ["Crossover", "12 dB in-line tweeter crossover"]
+        ]]
+      ]
+    },
+    "HB1.6C": {
+      "desc": "The HR 6C is a 6.5\"/165 mm coaxial speaker with an integrated 0.51\"/13 mm mylar dome tweeter. It handles 50 W RMS (100 W transient) with a nominal impedance of 4 Ω and a frequency response of 65 Hz – 18 kHz. Designed for direct replacement in factory speaker housings, it pairs easily with OEM or aftermarket head units.",
+      "narr": ["Key Features", [
+        "6.5\"/165 mm paper-cone woofer with aluminum voice coil support",
+        "Integrated 0.51\"/13 mm <b>mylar dome tweeter</b> with neodymium magnet",
+        "Drop-in coaxial design fits original factory speaker housings",
+        "Rubber surround for high damping and transversal stability",
+        "Compatible with factory head units or aftermarket amplifiers"
+      ]],
+      "sections": [
+        ["Power Handling", [
+          ["RMS Power", "50 W"],
+          ["Transient (Peak) Power", "100 W"]
+        ]],
+        ["Acoustic Performance", [
+          ["Sensitivity", "88 dB 2.83v/1m"],
+          ["Frequency Response", "65 Hz – 18 kHz"],
+          ["Nominal Impedance", "4 Ω"]
+        ]],
+        ["Design / Materials", [
+          ["Woofer Size", "6.5\"/165 mm"],
+          ["Cone Material", "Pressed paper"],
+          ["Surround", "Rubber"],
+          ["Voice Coil Support", "Aluminum"],
+          ["Magnet (Woofer)", "High-grade ferrite"],
+          ["Tweeter Size", "0.51\"/13 mm"],
+          ["Tweeter Type", "Mylar dome"],
+          ["Tweeter Magnet", "Neodymium"]
+        ]]
+      ]
+    },
+    "HR10US": {
+      "desc": "The HR 10 US is a 10\"/250 mm underseat active subwoofer delivering 130 W RMS (260 W max) in a compact aluminum enclosure. The built-in amplifier features adjustable low-pass filter (50 Hz – 150 Hz), 0–12 dB bass boost, and 0°–180° phase control. Both RCA and high-level inputs are provided for maximum installation flexibility.",
+      "narr": ["Key Features", [
+        "130 W RMS / 260 W max built-in amplifier in a compact underseat aluminum housing",
+        "<b>Low-pass crossover adjustable from 50 Hz to 150 Hz</b>",
+        "0 – 12 dB bass boost and 0° – 180° phase control",
+        "RCA + high-level inputs for OEM or aftermarket head unit compatibility",
+        "Auto turn-on sense eliminates the need for a remote turn-on wire",
+        "Includes wired remote control for level adjustment from the driver's seat"
+      ]],
+      "sections": [
+        ["Amplifier", [
+          ["RMS Power", "130 W"],
+          ["Max Power", "260 W"],
+          ["THD", "0.05%"],
+          ["S/N Ratio", "91 dB"]
+        ]],
+        ["Controls / Connectivity", [
+          ["Crossover Frequency", "50 Hz – 150 Hz"],
+          ["Bass Boost", "0 – 12 dB"],
+          ["Phase Control", "0° – 180°"],
+          ["Remote Control", "Included"],
+          ["Auto Sense", "Auto Turn-On"],
+          ["Inputs", "RCA + High Level"],
+          ["Input Gain", "6 V – 0.15 V"]
+        ]],
+        ["Dimensions", [
+          ["Enclosure Housing", "Aluminum"],
+          ["Dimensions (W × H × D)", "34.6 × 26 × 7.8 cm"]
+        ]]
+      ]
+    },
+    "HR10US-A": {
+      "desc": "The HR 10 US-A is a 5-channel Class-AB amplifier and active subwoofer system for Android head units, delivering 4 × 70 W + 400 W max (4 × 35 W + 200 W RMS) in an aluminum underseat enclosure. It includes an Android Plug&Play connection cable and a 4-band EQ, allowing the entire audio system to be installed under the front seat with no additional wiring beyond the supplied harness. A 0–12 dB bass boost and 0°–180° phase control are built in.",
+      "narr": ["Key Features", [
+        "<b>5-channel Class-AB amplifier</b>: 4 × 35 W RMS front/rear + 200 W RMS subwoofer (200 W RMS / 400 W max sub channel)",
+        "Android Plug&Play connection cable — no additional wiring beyond supplied harness",
+        "4-band EQ with −9 / +9 dB range",
+        "Low-pass crossover adjustable from 50 Hz to 150 Hz with 0 – 12 dB bass boost",
+        "0° – 180° phase control and included wired remote control",
+        "Compact aluminum underseat enclosure (34.5 × 26.1 × 7.8 cm)"
+      ]],
+      "sections": [
+        ["Amplifier", [
+          ["Configuration", "5-channel Class-AB"],
+          ["Max Power", "4 × 70 + 1 × 400 W"],
+          ["RMS Power", "4 × 35 + 1 × 200 W"],
+          ["Amplifier Type", "Class-AB"],
+          ["THD", "0.05%"],
+          ["S/N Ratio", "91 dB"],
+          ["Sensitivity", "92 dB"],
+          ["Freq. Response", "20 Hz – 22 kHz"],
+          ["Output Impedance", "2 Ω"],
+          ["Voltage", "14.4 V (10 V – 16 V)"]
+        ]],
+        ["Controls / Connectivity", [
+          ["4-Band EQ", "−9 / +9 dB"],
+          ["Crossover Frequency", "50 Hz – 150 Hz"],
+          ["Bass Boost", "0 – 12 dB"],
+          ["Phase Control", "0° – 180°"],
+          ["Remote Control", "Included"],
+          ["Auto Power On", "With High-Level Inputs"],
+          ["Inputs", "High Level"],
+          ["Input Gain", "6 V – 0.15 V"],
+          ["Android Connection", "Plug&Play harness included"]
+        ]],
+        ["Dimensions", [
+          ["Enclosure Housing", "Aluminum"],
+          ["Dimensions (W × H × D)", "34.5 × 26.1 × 7.8 cm"]
+        ]]
+      ]
+    },
+    "HR11SW": {
+      "desc": "The HR 11 SW is an 11\"/280 mm spare-wheel active subwoofer with a dual voice coil driver and a 200 W RMS (400 W max) Class-AB amplifier in a die-cast aluminum enclosure. The subwoofer mounts inside the rim of a spare wheel, providing powerful bass without sacrificing cargo space. An included remote control adjusts volume, phase (0° – 180°), low-pass crossover (50 – 150 Hz), and bass boost (0 – 12 dB).",
+      "narr": ["Key Features", [
+        "Fits inside a spare wheel rim — <b>zero trunk space sacrificed</b>",
+        "200 W RMS / 400 W max Class-AB amplifier in die-cast aluminum enclosure",
+        "Dual voice coil driver for flexible wiring options",
+        "Adjustable low-pass crossover from 50 Hz to 150 Hz with 0 – 12 dB bass boost",
+        "Low + high-level inputs for OEM and aftermarket head units",
+        "Includes wired remote for volume and phase control"
+      ]],
+      "sections": [
+        ["Amplifier", [
+          ["RMS Power", "200 W"],
+          ["Max Power", "400 W"],
+          ["Amplifier Type", "Class-AB"],
+          ["THD", "0.03%"],
+          ["S/N Ratio", "92 dB"]
+        ]],
+        ["Driver", [
+          ["Size", "11\"/280 mm"],
+          ["Voice Coil", "Dual voice coil"],
+          ["Impedance", "4 Ω"]
+        ]],
+        ["Controls / Connectivity", [
+          ["Crossover Frequency", "50 Hz – 150 Hz"],
+          ["Freq. Response", "30 Hz – 150 Hz"],
+          ["Bass Boost", "0 – 12 dB"],
+          ["Phase Control", "0° – 180°"],
+          ["Remote Control", "Included"],
+          ["Inputs", "Low + High Level"],
+          ["Gain Control", "200 mV – 6 V"],
+          ["Voltage", "14.4 V (10 V – 16 V)"],
+          ["Installation", "Spare Wheel"]
+        ]],
+        ["Dimensions", [
+          ["Enclosure Housing", "Die-cast aluminum"],
+          ["Dimensions (W × H × D)", "36 × 36 × 12.6 cm"]
+        ]]
+      ]
+    }
+  },
+  "series": {
+    "Harmony|Hard Rock": {
+      "intro": [
+        "The Harmony brand was launched in the 1980s, together with the first home loudspeakers produced by ESB. The production of Harmony car speakers began in the 90s, with a wide range of products that combined high quality performance at a lower price than the ESB speakers themselves, yet without ever forgetting the final goal: a high-fidelity speaker capable of reproducing the entire sound spectrum.",
+        "ESB now expands its product range with the Hard Rock (HR) Series, offering all you need in convenient ready-to-use speaker systems, including active subwoofers that can be easily installed under the front seats or that fit inside the rim of your spare wheel. The HR Series includes 4\", 5\", and 6.5\" 2-way component systems and coaxials, all designed to be easily installed in a vehicle’s original speaker housings and to integrate with a factory head unit or an aftermarket amplifier. The woofer’s pressed paper cone, large aluminum voice coils for high power handling, and silk dome tweeters with neodymium magnets are just some of the features that make these speakers uncompromising."
+      ]
+    }
+  }
+}

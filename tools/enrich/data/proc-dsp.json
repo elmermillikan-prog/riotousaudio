@@ -1,0 +1,211 @@
+{
+  "specs": {
+    "DSP-Z8IVAT": {
+      "desc": "The DSP-Z8 IV AT is an 8-channel standalone digital signal processor featuring a CS47048 32-bit/192 kHz DSP and auto-calibration (AutoTune) with optional microphone. It accepts up to 8 channels of speaker-level or RCA analog input plus coaxial and optical digital inputs, and outputs 8 channels of 5 V RMS RCA signal. A port for the optional HD-BT module adds aptX HD Bluetooth streaming, and the included LCD dash remote provides source, volume, and bass control.",
+      "narr": [
+        "Key Features",
+        [
+          "CS47048 32-bit/192 kHz DSP with THD+N −98 dB",
+          "AutoTune auto-calibration with optional M-AT1 calibration microphone",
+          "Coaxial (32-bit/192 kHz) and optical (24-bit/192 kHz) digital inputs",
+          "<b>8-channel speaker-level inputs (2–20 V) with auto-on</b>",
+          "Port for optional HD-BT II-D module — aptX / aptX HD Bluetooth streaming",
+          "Included 1\" LCD dash remote with source, volume, and bass output control"
+        ]
+      ],
+      "sections": [
+        [
+          "DSP / Processing",
+          [
+            ["DSP Processor", "CS47048"],
+            ["Processor Resolution", "32-bit / 192 kHz"],
+            ["THD+N (DSP)", "−98 dB"],
+            ["AD Converter", "CS47048, 32-bit / 192 kHz, THD+N −98 dB"],
+            ["DA Converter", "CS8422, 24-bit / 192 kHz, THD+N −120 dB"],
+            ["Signal Stage", "10 Hz – 22.5 kHz"],
+            ["S/N Ratio", "110 / 106 dBA (digital / analog)"],
+            ["Equalizer", "Graphic / Parametric, 31 bands"],
+            ["Crossover Types", "Linkwitz, Butterworth, Bessel, Tchebyschev"],
+            ["Time Alignment Range", "0 – 15 ms, step 0.02 ms (max 515 cm, step 0.68 cm)"],
+            ["Polarity", "0° / 180°"],
+            ["Mute / Solo", "Yes, per channel"],
+            ["Crosstalk (1 kHz)", "90 dB"]
+          ]
+        ],
+        [
+          "Connectivity",
+          [
+            ["RCA Inputs", "8 ch, 1–5 V RMS"],
+            ["Hi-Level Inputs", "8 ch, 2–20 V, with auto-on"],
+            ["RCA Outputs", "8 ch, 5 V RMS"],
+            ["Optical Input", "24-bit / 192 kHz"],
+            ["Coaxial Input", "32-bit / 192 kHz"],
+            ["Bluetooth", "aptX HD via optional HD-BT II-D module"],
+            ["PC Connection", "USB 2.0"],
+            ["Remote Control", "1\" LCD (Prev / Next / Mode / Source / Volume)"]
+          ]
+        ],
+        [
+          "Dimensions",
+          [
+            ["Size (W × L × H)", "213 × 113 × 50 mm"]
+          ]
+        ]
+      ]
+    },
+    "ADSP-Z12IV-10A": {
+      "desc": "The ADSP-Z12 IV-10A is an integrated 12-channel DSP and 10-channel amplifier delivering 10 × 120 W at 2 Ω or 10 × 80 W at 4 Ω. The CS47048 32-bit/192 kHz DSP core provides 31-band graphic/parametric equalization, four crossover filter types, and time alignment across 12 processing channels. Coaxial and optical digital inputs, 8-channel speaker-level inputs with auto-on, and a port for the optional HD-BT module round out the connectivity.",
+      "narr": [
+        "Key Features",
+        [
+          "<b>10-channel amplifier: 10 × 120 W @ 2 Ω / 10 × 80 W @ 4 Ω</b>",
+          "CS47048 32-bit/192 kHz DSP with THD+N −98 dB",
+          "31-band graphic/parametric EQ with Linkwitz, Butterworth, Bessel, Tchebyschev crossovers",
+          "Coaxial (32-bit/192 kHz) and optical (24-bit/192 kHz) digital inputs",
+          "8-channel speaker-level inputs (2–20 V) with auto-on",
+          "Port for optional HD-BT II-D module — aptX / aptX HD Bluetooth streaming"
+        ]
+      ],
+      "sections": [
+        [
+          "Power Output",
+          [
+            ["2 Ω", "10 × 120 W"],
+            ["4 Ω", "10 × 80 W"]
+          ]
+        ],
+        [
+          "DSP / Processing",
+          [
+            ["DSP Processor", "CS47048"],
+            ["Processor Resolution", "32-bit / 192 kHz"],
+            ["THD+N (DSP)", "−98 dB"],
+            ["AD Converter", "CS47048 / AKM4619, 32/24-bit / 192 kHz, THD+N −98/−95 dB"],
+            ["DA Converter", "CS47048, 32-bit / 192 kHz, THD+N −98 dB"],
+            ["Signal Stage", "10 Hz – 22.5 kHz"],
+            ["S/N Ratio", "110 / 106 dBA (digital / analog)"],
+            ["THD+N (Amp Input)", "0.07%"],
+            ["Equalizer", "Graphic / Parametric, 31 bands"],
+            ["Crossover Types", "Linkwitz, Butterworth, Bessel, Tchebyschev"],
+            ["Time Alignment Range", "0 – 15 ms, step 0.02 ms (max 515 cm, step 0.68 cm)"],
+            ["Polarity", "0° / 180°"],
+            ["Mute / Solo", "Yes, per channel"],
+            ["Crosstalk (1 kHz, DSP)", "90 dB"],
+            ["Crosstalk (DSP + Amp)", "45 dB"]
+          ]
+        ],
+        [
+          "Connectivity",
+          [
+            ["RCA Inputs", "8 ch, 1–5 V RMS"],
+            ["Hi-Level Inputs", "8 ch, 2–20 V, with auto-on"],
+            ["RCA Outputs", "2 ch, 5 V RMS"],
+            ["Optical Input", "24-bit / 192 kHz"],
+            ["Coaxial Input", "32-bit / 192 kHz"],
+            ["Bluetooth", "aptX HD via optional HD-BT II-D module"],
+            ["PC Connection", "USB 2.0"],
+            ["Remote Control", "1\" LCD (Prev / Next / Mode / Source / Volume)"]
+          ]
+        ],
+        [
+          "Dimensions",
+          [
+            ["Size (W × L × H)", "213 × 291 × 50 mm"]
+          ]
+        ]
+      ]
+    },
+    "ADSP-Z16IV-12A": {
+      "desc": "The ADSP-Z16 IV-12A is an integrated 16-channel DSP and 12-channel amplifier delivering 12 × 120 W at 2 Ω or 12 × 80 W at 4 Ω. Built on the same CS47048 32-bit/192 kHz DSP platform as the rest of the DSP-IV series, it supports 12 channels of speaker-level input (2–20 V) with auto-on, 8-channel RCA input, and 4-channel RCA output, along with coaxial and optical digital inputs. The optional HD-BT module adds aptX HD Bluetooth streaming.",
+      "narr": [
+        "Key Features",
+        [
+          "<b>12-channel amplifier: 12 × 120 W @ 2 Ω / 12 × 80 W @ 4 Ω</b>",
+          "CS47048 32-bit/192 kHz DSP with THD+N −98 dB",
+          "31-band graphic/parametric EQ with Linkwitz, Butterworth, Bessel, Tchebyschev crossovers",
+          "12-channel speaker-level inputs (2–20 V) with auto-on",
+          "Coaxial (32-bit/192 kHz) and optical (24-bit/192 kHz) digital inputs",
+          "Port for optional HD-BT II-D module — aptX / aptX HD Bluetooth streaming"
+        ]
+      ],
+      "sections": [
+        [
+          "Power Output",
+          [
+            ["2 Ω", "12 × 120 W"],
+            ["4 Ω", "12 × 80 W"]
+          ]
+        ],
+        [
+          "DSP / Processing",
+          [
+            ["DSP Processor", "CS47048"],
+            ["Processor Resolution", "32-bit / 192 kHz"],
+            ["THD+N (DSP)", "−98 dB"],
+            ["AD Converter", "CS47048 / AKM4619, 32/24-bit / 192 kHz, THD+N −98/−95 dB"],
+            ["DA Converter", "CS47048, 32-bit / 192 kHz, THD+N −98 dB"],
+            ["Signal Stage", "10 Hz – 22.5 kHz"],
+            ["S/N Ratio", "110 / 106 dBA (digital / analog)"],
+            ["THD+N (Amp Input)", "0.07%"],
+            ["Equalizer", "Graphic / Parametric, 31 bands"],
+            ["Crossover Types", "Linkwitz, Butterworth, Bessel, Tchebyschev"],
+            ["Time Alignment Range", "0 – 15 ms, step 0.02 ms (max 515 cm, step 0.68 cm)"],
+            ["Polarity", "0° / 180°"],
+            ["Mute / Solo", "Yes, per channel"],
+            ["Crosstalk (1 kHz, DSP)", "90 dB"],
+            ["Crosstalk (DSP + Amp)", "45 dB"]
+          ]
+        ],
+        [
+          "Connectivity",
+          [
+            ["RCA Inputs", "8 ch, 1–5 V RMS"],
+            ["Hi-Level Inputs", "12 ch, 2–20 V, with auto-on"],
+            ["RCA Outputs", "4 ch, 5 V RMS"],
+            ["Optical Input", "24-bit / 192 kHz"],
+            ["Coaxial Input", "32-bit / 192 kHz"],
+            ["Bluetooth", "aptX HD via optional HD-BT II-D module"],
+            ["PC Connection", "USB 2.0"],
+            ["Remote Control", "1\" LCD (Prev / Next / Mode / Source / Volume)"]
+          ]
+        ],
+        [
+          "Dimensions",
+          [
+            ["Size (W × L × H)", "213 × 291 × 50 mm"]
+          ]
+        ]
+      ]
+    },
+    "Z-CB100F": {
+      "desc": "The Z-CB100F is a 100 Farad supercapacitor bank built from six 600 Farad supercapacitors connected in series to deliver 100 F (100,000,000 µF) of power reserve capacity. Its extremely low internal resistance versus conventional electrolytic capacitors provides a very fast transient response that Zapco states greatly improves sound quality. Integrated voltage and current indicators allow monitoring of operating parameters across three or more amplifiers.",
+      "narr": [
+        "Key Features",
+        [
+          "<b>100 Farad (100,000,000 µF) total capacitance</b>",
+          "Built from 6 × 600 Farad supercapacitors connected in series",
+          "Ultra-low internal resistance for fast transient response",
+          "Integrated voltage and current indicators for system monitoring",
+          "Supports monitoring operating parameters for 3 or more amplifiers"
+        ]
+      ],
+      "sections": [
+        [
+          "Capacitance",
+          [
+            ["Total Capacitance", "100 Farad (100,000,000 µF)"],
+            ["Cell Configuration", "6 × 600 Farad supercapacitors in series"]
+          ]
+        ]
+      ]
+    }
+  },
+  "series": {
+    "Zapco|DSP-IV": {
+      "intro": [
+        "The Zapco DSP-IV Series brings audiophile-grade digital signal processing to an accessible price point — a lineage that traces back to the original DSP-Z8 IV, which Zapco credits with performance superior to competing units costing twice as much and even earning use in top-tier Master Class SQ competition vehicles. The current generation, the DSP-IV AT, refines that legacy with a sharp new black-and-copper aesthetic matching the AP amplifier family, adding coaxial digital input alongside optical, and introducing the AutoTune auto-calibration function for AT-designated models.",
+        "The series spans a standalone 8-channel processor (DSP-Z8 IV AT) and three integrated DSP/amplifier units (ADSP-Z8 IV-6AT, ADSP-Z12 IV-10A, ADSP-Z16 IV-12A). All models share the CS47048 32-bit/192 kHz DSP engine, 31-band graphic/parametric EQ, four crossover filter families, per-channel time alignment up to 515 cm, and a port for the optional HD-BT II-D module providing aptX HD Bluetooth streaming. The GUI's Advanced menu adds a Mixing Set for manual input-to-channel routing and, on AT units, the AutoTune function that automatically sets signal delay and channel phase using an optional calibration microphone."
+      ]
+    }
+  }
+}
