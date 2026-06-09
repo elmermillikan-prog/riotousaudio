@@ -338,6 +338,7 @@
     // Warm specs so the chip thumbnail/name can fill in shortly.
     loadSpecs().then(syncUI).catch(function () {/* already surfaced */});
     syncUI();
+    syncCompareUrl();
     return true;
   }
 
@@ -347,6 +348,7 @@
     state.handles.splice(i, 1);
     writeLS();
     syncUI();
+    syncCompareUrl();
   }
 
   function toggle(handle) {
@@ -360,6 +362,7 @@
     state.handles = [];
     writeLS();
     syncUI();
+    syncCompareUrl();
   }
 
   /* ---- shared spec-table builder (used by modal + page) ----------------- */
@@ -829,7 +832,9 @@
   function syncCompareUrl() {
     if (!isComparePage()) return;
     try {
-      var want = '?skus=' + encodeURIComponent(state.handles.join(','));
+      var want = state.handles.length
+        ? '?skus=' + encodeURIComponent(state.handles.join(','))
+        : '';
       if (location.search !== want) {
         history.replaceState(null, '', location.pathname + want);
       }
