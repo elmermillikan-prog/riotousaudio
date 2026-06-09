@@ -156,6 +156,14 @@
   /* ---- cart state ------------------------------------------------------- */
   var state = { cart: null, open: false };
 
+  // In-flight guard for per-line mutations (#397). A second remove/qty trigger
+  // for the same line (double-click, or re-click during a slow request) would
+  // otherwise fire cartLinesRemove/Update twice — the first succeeds, the
+  // second errors because the line is already gone, flashing a bogus
+  // "Could not remove" on the revenue path. We ignore concurrent mutations
+  // for a line id until the in-flight request for it resolves.
+  var linesInFlight = Object.create(null);
+
   function cartId() {
     try { return localStorage.getItem(LS_CART); } catch (e) { return null; }
   }
@@ -399,6 +407,9 @@
     if (qty < 1) { removeLine(line); return; }
     var id = cartId();
     if (!id) return;
+    // In-flight guard (#397): ignore a concurrent mutation for this same line.
+    if (linesInFlight[line.id]) return;
+    linesInFlight[line.id] = true;
     setBusy(true);
     gql(M_LINES_UPDATE, {
       cartId: id,
@@ -411,23 +422,44 @@
     }).catch(function (e) {
       console.error('[RA-CART] update qty failed:', e);
       showStatus('Could not update quantity: ' + e.message, 'error');
-    }).then(function () { setBusy(false); });
+    }).then(function () {
+      delete linesInFlight[line.id];
+      setBusy(false);
+    });
   }
 
   function removeLine(line) {
     var id = cartId();
     if (!id) return;
+    // In-flight guard (#397): a double-click / re-click during a slow request
+    // must not fire a second cartLinesRemove for a line that is already gone.
+    if (linesInFlight[line.id]) return;
+    linesInFlight[line.id] = true;
     setBusy(true);
     gql(M_LINES_REMOVE, { cartId: id, lineIds: [line.id] })
       .then(function (data) {
         var err = firstUserError(data, 'cartLinesRemove');
-        if (err) throw new Error(err);
-        adoptCart(data.cartLinesRemove.cart);
+        // Treat an "already removed / not found" userError as benign success:
+        // the line is gone, which is the intended outcome. Genuine errors
+        // (anything else) still surface per NO SILENT FAILURES.
+        if (err && !isAlreadyGone(err)) throw new Error(err);
+        if (data.cartLinesRemove && data.cartLinesRemove.cart) {
+          adoptCart(data.cartLinesRemove.cart);
+        }
         clearStatus();
       }).catch(function (e) {
         console.error('[RA-CART] remove line failed:', e);
         showStatus('Could not remove item: ' + e.message, 'error');
-      }).then(function () { setBusy(false); });
+      }).then(function () {
+        delete linesInFlight[line.id];
+        setBusy(false);
+      });
+  }
+
+  // A remove that reports the line is no longer in the cart is the intended
+  // outcome (e.g. a concurrent remove already deleted it), not a failure.
+  function isAlreadyGone(msg) {
+    return /not\s*found|does not exist|doesn't exist|already|no longer|invalid line|merchandise line/i.test(String(msg));
   }
 
   function setBusy(on) {
